@@ -1,3 +1,4 @@
+/*Create a double linked list in which info part of each node contains a digit of a given number. The digits should be stored in reverse order . Write a function to add two numbers using the above linked list representation.*/
 #include<stdio.h>
 #include<stdlib.h>
 
