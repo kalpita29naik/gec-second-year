@@ -1,3 +1,4 @@
+/*Delete alternate nodes from a circular linked list.*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -50,8 +51,8 @@ node *create(node *last)
 
 node *addtoempty(node *last,int data)
 {
-	struct node *tmp;
-	tmp=(struct node *)malloc(sizeof(node));
+	node *tmp;
+	tmp=(node *)malloc(sizeof(node));
 	tmp->data=data;
 	last=tmp;
 	last->link=last;
@@ -60,8 +61,8 @@ node *addtoempty(node *last,int data)
 
 node *addatend(node *last,int data)
 {
-	struct node *tmp;
-	tmp=(struct node *)malloc(sizeof(struct node));
+	node *tmp;
+	tmp=(node *)malloc(sizeof(node));
 	tmp->data=data;
 	tmp->link=last->link;
 	last->link=tmp;
@@ -114,11 +115,10 @@ node *alt(node *last)
    return last;
    }
 
-   if(last==prev)//end of the list
+			if(last==prev)//end of the list
    {
     return last;
    }
-   
   prev->link=next->link;
   free(next);
 
