@@ -1,3 +1,10 @@
+/*Develop C program to create an AVL Tree through a series of insertions from a predefined array of elements. Provide the following options for the said operations to be performed on the tree:
+Insertion of a new element
+Deletion of an existing element
+Searching for a given element
+Finding the width of the tree
+Finding the max value and min value nodes
+Listing the elements of the AVL in descending order*/
 #include<stdio.h>
 #include<stdlib.h>
 #define TRUE 1
@@ -124,13 +131,13 @@ node *insert(node *pptr,int ikey)
  {
   pptr->left=insert(pptr->left,ikey);
   if(taller==TRUE)
-  { pptr=insert_left_check(pptr,&taller);}
+       { pptr=insert_left_check(pptr,&taller);}
  }
-  else if(ikey>pptr->info)
+ else if(ikey>pptr->info)
   {
    pptr->right=insert(pptr->right,ikey);
    if(taller==TRUE)
-   { pptr=insert_right_check(pptr,&taller);}
+       { pptr=insert_right_check(pptr,&taller);}
   }
   else
   {
@@ -295,7 +302,7 @@ node *del(node *pptr,int d)
               {
                      succ=pptr->right;
                      while(succ->left!=NULL)
-                     {  succ=succ->left; }
+                            { succ=succ->left; }
                      pptr->info=succ->info;
                      pptr->right=del(pptr->right,succ->info);
                      if(shorter==TRUE)
@@ -305,11 +312,11 @@ node *del(node *pptr,int d)
               {
                      temp=pptr;
                      if(pptr->left!=NULL)
-                     {  pptr=pptr->left; }
+                        {pptr=pptr->left;}
                      else if(pptr->right!=NULL)
-                     { pptr=pptr->right; }
+                        {pptr=pptr->right;}
                      else
-                     { pptr=NULL; }
+                        {pptr=NULL;}
                      free(temp);
                      shorter=TRUE;
               }
@@ -455,7 +462,7 @@ int MAXwidth(node *p)
        {
               width=widthlevel(p,i);
               if(width>maxwidth)
-              {  maxwidth=width; }
+                {maxwidth=width;}
        }
        return maxwidth;
 }
