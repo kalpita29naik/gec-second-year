@@ -77,8 +77,8 @@ int main()
           break;
 
   case 4:printf("\nSpiral traversal is :");
-               spiral(tree);
-               printf("\n");
+         spiral(tree);
+         printf("\n");
          break;
 
   case 5:exit(1);
@@ -142,9 +142,7 @@ treenode *construct(node *inptr,node *postptr,int num)
  {
   return NULL;
  }
-
  ptr=postptr;
-
  for(i=1;i<num;i++)
  {
   ptr=ptr->link;
