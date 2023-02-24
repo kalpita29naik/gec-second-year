@@ -1,5 +1,7 @@
 //C++ code for implementing breadth first search and depth first search using adjacency matrix
 #include <iostream>
+#include <stack>
+#include <queue>
 #define MAX 5
 
 using namespace std;
@@ -56,14 +58,16 @@ void mgraph:: getdata()
         switch(choice)
         {
             case 1:
-            int i = 0,j = 0;
-            cout << "Enter the two nodes you want to connect" << endl;
-            cin >> i;
-            cin >> j;
-            matrix[i][j] = 1;
-            matrix[j][i] = 1;
-            break;
-
+            {
+                int i = 0,j = 0;
+                cout << "Enter the two nodes you want to connect" << endl;
+                cin >> i;
+                cin >> j;
+                matrix[i][j] = 1;
+                matrix[j][i] = 1;
+                break;
+            }
+            
             case 2:
             break;
 
@@ -80,6 +84,12 @@ void mgraph:: getdata()
 void mgraph:: bfs()
 {
     clear_visited();
+    queue<int> bque;
+    bque.push(0);
+    while(!bque.empty())
+    {
+        
+    }
 }
 
 //Todo-------------------------Function dfs()--------------------------------------------
